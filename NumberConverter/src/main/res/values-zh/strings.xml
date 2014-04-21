@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">数字转换</string>
+    <string name="action_settings">设置</string>
+    <string name="type_label">输入类型：</string>
+    <string name="input_hint">输入要转换的数字</string>
+    <string name="convert_btn">转换</string>
+    <string name="result_bi_label">二进制</string>
+    <string name="copy_btn">复制</string>
+
+    <!-- Type Spinner String Array -->
+    <!--<string-array name="types_array">-->
+        <!--<item>十进制</item>-->
+        <!--<item>二进制</item>-->
+        <!--<item>十六进制</item>-->
+        <!--<item>无符号字符型</item>-->
+        <!--<item>字符型（char）</item>-->
+        <!--<item>无符号整数</item>-->
+        <!--<item>整数（int）</item>-->
+        <!--<item>浮点数（float）</item>-->
+        <!--<item>双精度浮点（double）</item>-->
+    <!--</string-array>-->
+
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NumberConverter</string>
+    <string name="action_settings">Settings</string>
+    <string name="type_label">Input Type:</string>
+    <string name="input_hint">Input number to convert</string>
+    <string name="convert_btn">Convert</string>
+    <string name="result_bi_label">Binary</string>
+    <string name="copy_btn">Copy</string>
+    <string name="result_zero">0000000000000000</string>
+
+    <!-- Type Spinner String Array -->
+    <string-array name="types_array">
+        <item>Decimal</item>
+        <item>Binary</item>
+        <item>Hex</item>
+        <item>Unsigned char</item>
+        <item>Signed char</item>
+        <item>Unsigned int</item>
+        <item>Signed int</item>
+        <item>Float</item>
+        <item>Double</item>
+    </string-array>
+</resources>
