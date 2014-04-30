@@ -13,7 +13,7 @@ public class Utils {
 
         // Decimal (Double)
         Double d = Double.longBitsToDouble(longBits);
-        list.add(d.toString());
+        list.add(String.format("%g", d));
 
         // Binary (not modified)
         list.add(binaryString);
@@ -28,10 +28,12 @@ public class Utils {
         list.add(String.valueOf(longBits.intValue()));
 
         // Float
-        list.add(String.valueOf(d.floatValue()));
+        int len = binaryString.length();
+        float f = len > 32 ? d.floatValue() : Float.intBitsToFloat(Integer.parseInt(binaryString, 2));
+        list.add(String.format("%g", f));
 
         // Double
-        list.add(d.toString());
+        list.add(String.format("%g", d));
 
         return list;
     }
