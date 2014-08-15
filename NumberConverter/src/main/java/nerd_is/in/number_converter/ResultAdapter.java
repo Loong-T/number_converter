@@ -1,5 +1,6 @@
 package nerd_is.in.number_converter;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -77,6 +78,7 @@ public class ResultAdapter extends BaseAdapter {
         holder.tvItemTitle.setText(mResultTitles[position]);
         holder.tvItemResult.setText(mResults.get(position));
         holder.btnItemCopy.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("NewApi")
             @Override
             public void onClick(View v) {
 
@@ -96,8 +98,12 @@ public class ResultAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void setmResults(ArrayList<String> mResults) {
+    public void setResults(ArrayList<String> mResults) {
         this.mResults = mResults;
+    }
+
+    public ArrayList<String> getResults() {
+        return mResults;
     }
 
     static class ViewHolder {

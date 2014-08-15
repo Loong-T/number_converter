@@ -28,6 +28,9 @@
     <string name="dialog_author">Author：<a href='http://nerd-is.in'>Loong_T</a></string>
     <string name="dialog_src">Source Code：<a href='https://github.com/Nerd-is-in/number_converter'>https://github.com/Nerd-is-in/number_converter</a></string>
     <string name="num_parse_error">Format of the number you inputted has error. Is it out of range?</string>
+    <string name="action_floating">Floating</string>
+    <string name="noti_title">Long click to finish</string>
+    <string name="noti_content_text">Long click on the floating icon to finish app</string>
 
     <!-- Type Spinner String Array -->
     <string-array name="types_array">

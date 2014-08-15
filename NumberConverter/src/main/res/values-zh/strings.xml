@@ -22,5 +22,8 @@
     <string name="dialog_author">作者：<a href='http://nerd-is.in'>Loong_T</a></string>
     <string name="dialog_src">托管：<a href='https://github.com/Nerd-is-in/number_converter'>https://github.com/Nerd-is-in/number_converter</a></string>
     <string name="num_parse_error">输入的数字格式有误。是不是超出了该类型的范围？</string>
+    <string name="action_floating">悬浮</string>
+    <string name="noti_title">长按以关闭</string>
+    <string name="noti_content_text">长按悬浮按钮图标来结束程序</string>
 
 </resources>

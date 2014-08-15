@@ -57,6 +57,14 @@
             android:id="@+id/convertBtn"/>
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/inputLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

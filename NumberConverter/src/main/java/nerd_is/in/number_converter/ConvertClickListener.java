@@ -21,8 +21,8 @@ public class ConvertClickListener implements View.OnClickListener {
 
     public ConvertClickListener(MainActivity context) {
         mContext = context;
-        mEditText = context.getmEditText();
-        mAdapter = context.getmResultAdapter();
+        mEditText = context.getEditText();
+        mAdapter = context.getResultAdapter();
     }
 
     @Override
@@ -32,7 +32,7 @@ public class ConvertClickListener implements View.OnClickListener {
                 .hideSoftInputFromWindow(mEditText.getWindowToken(), 0);
 
         try {
-            mType = mContext.getmSelectType();
+            mType = mContext.getSelectType();
             String input = mEditText.getText().toString();
             switch (mType) {
                 case MainActivity.DECIMAL:
@@ -74,7 +74,7 @@ public class ConvertClickListener implements View.OnClickListener {
                     break;
             }
 
-            mAdapter.setmResults(mResult);
+            mAdapter.setResults(mResult);
             mAdapter.notifyDataSetChanged();
         } catch (NumberFormatException e) {
             Toast.makeText(mContext, mContext.getString(R.string.num_parse_error), Toast.LENGTH_LONG)

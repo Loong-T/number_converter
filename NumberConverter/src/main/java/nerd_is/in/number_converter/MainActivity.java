@@ -1,5 +1,6 @@
 package nerd_is.in.number_converter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -14,12 +15,16 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends ActionBarActivity {
 
     public static final int DECIMAL = 0, BINARY = 1, HEX = 2,
             SHORT = 3, INT = 4, FLOAT = 5, DOUBLE = 6;
     private static final String TAG = "MainActivity";
+    private static final String STATE_LIST_RESULTS = "state_list_results";
+
     private int mSelectType = 0;
     private String[] mTypeStrings;
     private ResultAdapter mResultAdapter;
@@ -52,6 +57,14 @@ public class MainActivity extends ActionBarActivity {
 
         mConvertBtn = (Button) findViewById(R.id.convertBtn);
         mConvertBtn.setOnClickListener(new ConvertClickListener(this));
+
+        if (savedInstanceState != null) {
+            ArrayList<String> results = savedInstanceState.getStringArrayList(STATE_LIST_RESULTS);
+            if (results != null && results.size() > 0) {
+                mResultAdapter.setResults(results);
+                mResultAdapter.notifyDataSetChanged();
+            }
+        }
     }
 
 
@@ -64,11 +77,31 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_about) {
-            AboutDialogFragment dialogFragment = new AboutDialogFragment();
-            dialogFragment.show(getSupportFragmentManager(), "about");
+        Log.d(TAG, "OptionItem selected: " + item.getTitle());
+        switch (id) {
+            case R.id.action_about:
+                showAboutDialog();
+                break;
+            case R.id.action_floating:
+                Log.d(TAG, "action floating: going to start service");
+                Intent intent = new Intent(this, FloatingWindowService.class);
+                // Again! You didn't put service in Manifest!!
+                startService(intent);
+                finish();
+                break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putStringArrayList(STATE_LIST_RESULTS, mResultAdapter.getResults());
+    }
+
+    private void showAboutDialog() {
+        AboutDialogFragment dialogFragment = new AboutDialogFragment();
+        dialogFragment.show(getSupportFragmentManager(), "about");
     }
 
     private class MyOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
@@ -92,15 +125,15 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    public int getmSelectType() {
+    public int getSelectType() {
         return mSelectType;
     }
 
-    public ResultAdapter getmResultAdapter() {
+    public ResultAdapter getResultAdapter() {
         return mResultAdapter;
     }
 
-    public EditText getmEditText() {
+    public EditText getEditText() {
         return mEditText;
     }
 }
