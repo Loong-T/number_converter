@@ -8,19 +8,19 @@
     <string name="convert_btn">Convert</string>
     <string name="result_bi_label">Binary</string>
     <string name="copy_btn">Copy</string>
-    <string name="result_zero">0000000000000000</string>
+    <string name="result_zero" translatable="false">0000000000000000</string>
     <string name="clip_data_label"> result</string>
     <string name="about_dialog_title">About NumberConverter</string>
     <string name="about_type_table_title">Types Table</string>
-    <string name="decimal">Decimal</string>
+    <string name="decimal" translatable="false">Decimal</string>
     <string name="table_decimal">treated as Double</string>
-    <string name="signed_short">Short</string>
+    <string name="signed_short" translatable="false">Short</string>
     <string name="table_short">16-bit signed integer (-2^15 to 2^15-1)</string>
-    <string name="signed_int">Int</string>
+    <string name="signed_int" translatable="false">Int</string>
     <string name="table_int">32-bit signed integer (-2^31 to 2^31-1)</string>
-    <string name="float_type">Float</string>
+    <string name="float_type" translatable="false">Float</string>
     <string name="table_float">32-bit IEEE 754 single-precision float</string>
-    <string name="double_type">Double</string>
+    <string name="double_type" translatable="false">Double</string>
     <string name="table_double">64-bit IEEE 754 double-precision float</string>
     <string name="explain">Number inputted will first convert to binary, then to other types (except the origin type).</string>
     <string name="dialog_positive_button">Close</string>
@@ -33,7 +33,7 @@
     <string name="noti_content_text">Long click on the floating icon to finish app</string>
 
     <!-- Type Spinner String Array -->
-    <string-array name="types_array">
+    <string-array name="types_array" translatable="false">
         <item>Decimal</item>
         <item>Binary</item>
         <item>Hex</item>
